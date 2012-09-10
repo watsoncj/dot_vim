@@ -12,17 +12,4 @@ if has('gui_macvim')
   macmenu &Tools.Make key=<nop>
   " D-l
   macmenu &Tools.List\ Errors key=<nop>
-
-  "set the window size
-  set co=100
-  set lines=50
-
-  "hide toolbar
-  set go-=T
-
-  "show file name in tab
-  set guitablabel=%t
-
-  "add window transparency
-  set transp=8
 endif
