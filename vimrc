@@ -189,13 +189,34 @@ set timeoutlen=350     " Time to wait for a command (after leader for example)
 set foldlevelstart=99  " Remove folds
 set formatoptions=crql
 set iskeyword+=$,@     " Add extra characters that are valid parts of variables
+set nrformats=octal,hex,alpha 	" Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
+set updatecount=50     " Write swap file to disk after every 50 characters
+
+" Set command-line completion mode:
+"   - on first <Tab>, when more than one match, list all matches and complete
+"     the longest common  string
+"   - on second <Tab>, complete the next full match and show menu
+set wildmode=list:longest,full
+
+" Remember things between sessions
+"
+" '20  - remember marks for 20 previous files
+" \"50 - save 50 lines for each register
+" :20  - remember 20 items in command-line history
+" %    - remember the buffer list (if vim started without a file arg)
+" n    - set name of viminfo file
+set viminfo='20,\"50,:20,%,n~/.viminfo
+
+" Set out print options because paper type defaults to A4 and we don't want
+" that also expand the margins to fit more code
+set popt=left:5pc,right:5pc,number:n,duplex:off,portrait:y,paper:letter
 
 " ---------------
 " Text Format
 " ---------------
-set tabstop=2
-set backspace=2  " Delete everything with backspace
-set shiftwidth=2 " Tabs under smart indent
+set tabstop=4
+set backspace=indent,eol,start  " Allow backspacing over everything
+set shiftwidth=4 				" Tabs under smart indent
 set cindent
 set autoindent
 set smarttab
@@ -218,6 +239,9 @@ set showmatch   " Show matching brackets.
 set matchtime=2 " How many tenths of a second to blink
 " Show invisible characters
 set list
+set scrolloff=3 " Scroll when cursor gets within 3 characters of top/bottom edge
+set shiftround  " Round indent to multiple of 'shiftwidth' for > and < commands
+set showcmd     " Show (partial) commands (or size of selection in Visual mode) in the status line
 
 " Show trailing spaces as dots and carrots for extended lines.
 " From Janus, http://git.io/PLbAlw
