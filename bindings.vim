@@ -74,6 +74,12 @@ nmap <silent> <leader>s :set spell!<CR>
 nmap <silent> <leader>v :e ~/.vim/vimrc<CR>
 " Quickly switch to last buffer
 nnoremap <leader>, :e#<CR>
+" Change to the directory of the currently open file
+nmap <silent> <leader>cd :cd %:p:h<CR>
+" Change the directory only for the current window
+nmap <silent> <leader>lcd :lcd %:p:h<CR>
+" Pretty format JSON
+map <leader>j :!python -m json.tool<CR>
 
 " Window Movement
 " Here's a visual guide for moving between window splits.
