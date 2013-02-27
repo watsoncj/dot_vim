@@ -12,6 +12,10 @@ if has('gui_macvim')
   macmenu &Tools.Make key=<nop>
   " D-l
   macmenu &Tools.List\ Errors key=<nop>
+
+  " Autoload NERDTree and move the cursor to the main window
+  autocmd VimEnter * NERDTree
+  autocmd VimEnter * wincmd p
 endif
 
 set visualbell " Keeps the audio bell from sounding in the GUI
