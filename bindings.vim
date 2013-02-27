@@ -79,7 +79,7 @@ nmap <silent> <leader>cd :cd %:p:h<CR>
 " Change the directory only for the current window
 nmap <silent> <leader>lcd :lcd %:p:h<CR>
 " Pretty format JSON
-map <leader>j :!python -m json.tool<CR>
+nmap <leader>jf :!python -m json.tool<CR>
 
 " Window Movement
 " Here's a visual guide for moving between window splits.
