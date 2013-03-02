@@ -36,6 +36,8 @@ endif
 if exists('+ballooneval')
   " This doesn't seem to stop tooltips for Ruby files
   set noballooneval
+  " This should stop tooltips for Ruby files
+  autocmd FileType ruby setlocal balloonexpr=
   " 100 second delay seems to be the only way to disable the tooltips
   set balloondelay=100000
 endif
