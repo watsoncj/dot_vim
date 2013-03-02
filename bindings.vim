@@ -64,6 +64,9 @@ map <silent><Leader>/ :nohls<CR>
 " Highlight search word under cursor without jumping to next
 nnoremap <leader>h *<C-O>
 
+" Search and replace word under cursor
+nnoremap <leader>sr :%s/\<<C-r><C-w>\>//g<Left><Left>
+
 " ---------------
 " Leader Commands
 " ---------------
