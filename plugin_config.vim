@@ -18,6 +18,8 @@ let g:syntastic_auto_loc_list=1
 if has('win32') || has('win64')
   let g:syntastic_jsl_conf=$HOME.'/.vim/config/windows/syntastic/jsl.conf'
   let g:syntastic_disabled_filetypes=['sh'] " Disable .sh on Windows
+else
+  let g:syntastic_javascript_jsl_conf=$HOME.'/.vim/config/unix/syntastic/jsl.conf'
 endif
 
 " ---------------
@@ -25,6 +27,7 @@ endif
 " ---------------
 nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
+let g:NERDTreeWinSize = 40
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
 let g:NERDTreeMinimalUI=1
