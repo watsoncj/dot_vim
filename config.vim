@@ -51,7 +51,9 @@ set wildmenu           " Turn on WiLd menu
 set hidden             " Change buffer - without saving
 set history=768        " Number of things to remember in history.
 set cf                 " Enable error files & error jumping.
-set clipboard+=unnamed " Yanks go on clipboard instead.
+if $TMUX == ''
+  set clipboard+=unnamed " Yanks go on clipboard instead unless we're running in TMUX.
+endif
 set autowrite          " Writes on make/shell commands
 set timeoutlen=450     " Time to wait for a command (after leader for example).
 set nofoldenable       " Disable folding entirely.
@@ -64,9 +66,9 @@ set scrolloff=3        " Keep three lines below the last line when scrolling
 " ---------------
 " Text Format
 " ---------------
-set tabstop=4
+set tabstop=2
 set backspace=2  " Delete everything with backspace
-set shiftwidth=4 " Tabs under smart indent
+set shiftwidth=2 " Tabs under smart indent
 set cindent
 set autoindent
 set smarttab
