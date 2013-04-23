@@ -141,19 +141,23 @@ inoremap JK <Esc>
 inoremap Jk <Esc>
 inoremap jK <Esc>
 
-" Disable Escape while learning new binding.
-inoremap <Esc> <nop>
-
 " -------------------------------------
 " The following commands are from Janus
 " http://git.io/_GhulA
 " -------------------------------------
 
-" Underline the current line with '='
+" Underline the current line with '-'
 nmap <silent> <leader>ul :t.\|s/./-/g\|:nohls<cr>
+
+" Underline the current line with '='
+nmap <silent> <leader>uul :t.\|s/./=/g\|:nohls<cr>
 
 " Format the entire file
 nmap <leader>fef ggVG=
 
 " Wrap the current line
-nmap <leader>fw Vgq
+nmap <leader>fl Vgq
+
+" Format a json file with Python's built in json.tool.
+" from https://github.com/spf13/spf13-vim/blob/3.0/.vimrc#L390
+nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>

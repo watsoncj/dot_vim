@@ -13,6 +13,9 @@ let g:space_disable_select_mode=1
 " ---------------
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['scss'] }
 
 " Platform-specific config files
 if has('win32') || has('win64')
@@ -125,11 +128,10 @@ let g:Powerline_mode_cs = 'SB'
 hi! link cssAttr Constant
 
 " ---------------
-" Ack.vim
+" Ag.vim
 " ---------------
-nmap <silent> <leader>as :AckFromSearch<CR>
-" Highlight word at cursor and then Ack it.
-nnoremap <leader>H *<C-O>:AckFromSearch!<CR>
+nmap <silent> <leader>as :AgFromSearch<CR>
+nmap <leader>ag :Ag<space>
 
 " ---------------
 " surround.vim
@@ -190,6 +192,7 @@ nmap gcp <Plug>UnconditionalPasteCharAfter
 if has('macunix') || has('mac')
   let g:gist_clip_command = 'pbcopy'
 endif
+let g:gist_post_private=1
 
 " ---------------
 " MatchTagAlways
@@ -202,8 +205,28 @@ let g:mta_filetypes = {
     \}
 
 " ---------------
+" YouCompleteMe
+" ---------------
+let g:ycm_complete_in_comments_and_strings=1
+let g:ycm_collect_identifiers_from_comments_and_strings=1
+
+" ---------------
+" vim-signify
+" ---------------
+let g:signify_mapping_next_hunk="<leader>sn"
+let g:signify_mapping_prev_hunk="<leader>sp"
+let g:signify_mapping_toggle_highlight="<nop>"
+let g:signify_mapping_toggle="<nop>"
+
+" ---------------
+" vim-abolish
+" ---------------
+nnoremap <leader>su :Subvert/
+nnoremap <leader>ss :%Subvert/
+
+" ---------------
 " Vundle
 " ---------------
 nmap <Leader>bi :BundleInstall<CR>
-nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
+nmap <Leader>bu :BundleInstall!<CR>
 nmap <Leader>bc :BundleClean<CR>
