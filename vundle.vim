@@ -29,6 +29,7 @@ Bundle 'Rykka/colorv.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'mhinz/vim-signify'
 " Commands
+Bundle 'dansomething/vim-eclim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
