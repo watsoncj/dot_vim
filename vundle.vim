@@ -88,6 +88,8 @@ Bundle 'groenewege/vim-less'
 Bundle 'wavded/vim-stylus'
 Bundle 'tpope/vim-cucumber'
 Bundle 'chaquotay/ftl-vim-syntax'
+Bundle 'vim-scripts/groovy.vim'
+Bundle 'tfnico/vim-gradle'
 " MatchIt
 Bundle 'matchit.zip'
 Bundle 'kana/vim-textobj-user'
