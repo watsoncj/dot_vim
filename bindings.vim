@@ -65,7 +65,10 @@ map <silent><Leader>/ :nohls<CR>
 nnoremap <leader>h *<C-O>
 
 " Search and replace word under cursor
-nnoremap <leader>sr :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <leader>sr :%s/\<<c-r><c-w>\>//g<left><left>
+
+" Smart insert semicolon
+noremap <leader>; mqA;<Esc>`q
 
 " ---------------
 " Leader Commands

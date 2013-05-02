@@ -230,3 +230,8 @@ nnoremap <leader>ss :%Subvert/
 nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bu :BundleInstall!<CR>
 nmap <Leader>bc :BundleClean<CR>
+
+" ---------------
+" Eclim
+" ---------------
+let g:EclimCompletionMethod='omnifunc'

@@ -22,3 +22,9 @@ source ~/.vim/plugin_config.vim
 source ~/.vim/functions.vim
 " Auto commands.
 source ~/.vim/autocmds.vim
+
+" Extra local only config that is not committed
+let extraFile=expand("~/.vim/extra.vim")
+if filereadable(extraFile)
+  exe "source" . extraFile
+endif
