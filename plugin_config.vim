@@ -2,6 +2,11 @@
 " Plugin Configuration
 " ----------------------------------------
 
+" -------
+" Eclim
+" -------
+let g:EclimCompletionMethod='omnifunc'
+
 " ---------------
 " space.vim
 " ---------------
@@ -204,6 +209,11 @@ let g:mta_filetypes = {
     \ 'handlebars' : 1,
     \}
 
+" ----------
+" SuperTab
+" ----------
+let g:SuperTabClosePreviewOnPopupClose=1
+
 " ---------------
 " YouCompleteMe
 " ---------------
@@ -230,8 +240,3 @@ nnoremap <leader>ss :%Subvert/
 nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bu :BundleInstall!<CR>
 nmap <Leader>bc :BundleClean<CR>
-
-" ---------------
-" Eclim
-" ---------------
-let g:EclimCompletionMethod='omnifunc'
