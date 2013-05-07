@@ -70,6 +70,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'elzr/vim-json'
 Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'claco/jasmine.vim'
 "   HTML
 Bundle 'nono/vim-handlebars'
 Bundle 'othree/html5.vim'
