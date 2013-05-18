@@ -8,6 +8,13 @@
 let g:EclimCompletionMethod='omnifunc'
 
 " ---------------
+" Vundle
+" ---------------
+nnoremap <Leader>bi :BundleInstall<CR>
+nnoremap <Leader>bu :BundleInstall!<CR>
+nnoremap <Leader>bc :BundleClean<CR>
+
+" ---------------
 " space.vim
 " ---------------
 " Disables space mappings in select mode to fix snipMate.
@@ -57,37 +64,37 @@ nnoremap <leader>os :OpenSession<CR>
 " ---------------
 " Tabular
 " ---------------
-nmap <Leader>t= :Tabularize /=<CR>
-vmap <Leader>t= :Tabularize /=<CR>
-nmap <Leader>t: :Tabularize /:\zs<CR>
-vmap <Leader>t: :Tabularize /:\zs<CR>
-nmap <Leader>t, :Tabularize /,\zs<CR>
-vmap <Leader>t, :Tabularize /,\zs<CR>
-nmap <Leader>t> :Tabularize /=>\zs<CR>
-vmap <Leader>t> :Tabularize /=>\zs<CR>
-nmap <Leader>t- :Tabularize /-<CR>
-vmap <Leader>t- :Tabularize /-<CR>
-nmap <Leader>t" :Tabularize /"<CR>
-vmap <Leader>t" :Tabularize /"<CR>
+nnoremap <Leader>t= :Tabularize /=<CR>
+vnoremap <Leader>t= :Tabularize /=<CR>
+nnoremap <Leader>t: :Tabularize /:\zs<CR>
+vnoremap <Leader>t: :Tabularize /:\zs<CR>
+nnoremap <Leader>t, :Tabularize /,\zs<CR>
+vnoremap <Leader>t, :Tabularize /,\zs<CR>
+nnoremap <Leader>t> :Tabularize /=>\zs<CR>
+vnoremap <Leader>t> :Tabularize /=>\zs<CR>
+nnoremap <Leader>t- :Tabularize /-<CR>
+vnoremap <Leader>t- :Tabularize /-<CR>
+nnoremap <Leader>t" :Tabularize /"<CR>
+vnoremap <Leader>t" :Tabularize /"<CR>
 
 " ---------------
 " Fugitive
 " ---------------
-nmap <Leader>gc :Gcommit -v<CR>
-nmap <Leader>gw :Gwrite<CR>
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gp :Git push<CR>
+nnoremap <Leader>gc :Gcommit -v<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gp :Git push<CR>
  " Mnemonic, gu = Git Update
-nmap <Leader>gu :Git pull<CR>
-nmap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gu :Git pull<CR>
+nnoremap <Leader>gd :Gdiff<CR>
 " Exit a diff by closing the diff window
-nmap <Leader>gx :wincmd h<CR>:q<CR>
+nnoremap <Leader>gx :wincmd h<CR>:q<CR>
 
 " ---------------
 " Zoomwin
 " ---------------
 " Zoom Window to Full Size
-nmap <silent> <leader>wo :ZoomWin<CR>
+nnoremap <silent> <leader>wo :ZoomWin<CR>
 
 " ---------------
 " ctrlp.vim
@@ -135,8 +142,8 @@ hi! link cssAttr Constant
 " ---------------
 " Ag.vim
 " ---------------
-nmap <silent> <leader>as :AgFromSearch<CR>
-nmap <leader>ag :Ag<space>
+nnoremap <silent> <leader>as :AgFromSearch<CR>
+nnoremap <leader>ag :Ag<space>
 
 " ---------------
 " surround.vim
@@ -162,8 +169,8 @@ noremap gS :SidewaysLeft<cr>
 " ---------------
 " Markdown-Preview
 " ---------------
-nmap <Leader>md :MarkdownPreview<CR>
-vmap <Leader>md :MarkdownPreview<CR>
+nnoremap <Leader>md :MarkdownPreview<CR>
+vnoremap <Leader>md :MarkdownPreview<CR>
 
 " ---------------
 " switch.vim
@@ -188,8 +195,8 @@ let g:vim_markdown_folding_disabled=1
 " Unconditional Paste
 " ---------------
 let g:UnconditionalPaste_NoDefaultMappings=1
-nmap gcP <Plug>UnconditionalPasteCharBefore
-nmap gcp <Plug>UnconditionalPasteCharAfter
+nnoremap gcP <Plug>UnconditionalPasteCharBefore
+nnoremap gcp <Plug>UnconditionalPasteCharAfter
 
 " ---------------
 " Gist.vim
@@ -227,6 +234,8 @@ let g:signify_mapping_next_hunk="<leader>sn"
 let g:signify_mapping_prev_hunk="<leader>sp"
 let g:signify_mapping_toggle_highlight="<nop>"
 let g:signify_mapping_toggle="<nop>"
+" Makes switching buffers in large repos have no delay
+let g:signify_update_on_bufenter=0
 
 " ---------------
 " vim-abolish
@@ -235,8 +244,65 @@ nnoremap <leader>su :Subvert/
 nnoremap <leader>ss :%Subvert/
 
 " ---------------
-" Vundle
+" vim-startify
 " ---------------
-nmap <Leader>bi :BundleInstall<CR>
-nmap <Leader>bu :BundleInstall!<CR>
-nmap <Leader>bc :BundleClean<CR>
+let g:startify_bookmarks = [ '~/.vim/vimrc',
+                            \'~/.vim/config.vim',
+                            \'~/.vim/bindings.vim',
+                            \'~/.vim/plugin_bindings.vim',
+                            \'~/.vim/vundle.vim',
+                            \'~/dot_files/_zshrc'
+                            \'~/dot_files/aliases.sh',
+                            \'~/dot_files/environment.sh',
+                            \'~/dot_files/system_environment.sh']
+let g:startify_show_files_number=20
+
+" ---------------
+" vim-togglecursor
+" ---------------
+let g:togglecursor_leave='line'
+
+" ---------------
+" rails.vim
+" ---------------
+command! Remigrate :Rake db:drop | Rake db:create | Rake db:migrate | Rake test:prepare
+
+" Add custom commands for Rails.vim
+" Thanks to http://git.io/_cBVeA and http://git.io/xIKnCw
+let g:rails_projections = {
+      \ 'app/models/*.rb': {'keywords': 'validates_conditional'},
+      \ 'db/seeds/*.rb': {'command': 'seeds'},
+      \ 'db/seeds.rb': {'command': 'seeds'},
+      \ 'spec/factories.rb': {'command': 'factory'},
+      \ 'spec/factories/*_factory.rb': {
+      \   'command': 'factory',
+      \   'affinity': 'model',
+      \   'alternate': 'app/models/%s.rb',
+      \   'related': 'db/schema.rb#%p',
+      \   'test': 'spec/models/%s_spec.rb',
+      \   'template': "FactoryGirl.define do\n  factory :%s do\n  end\nend",
+      \   'keywords': 'factory sequence'
+      \ },
+      \ 'spec/factories/*.rb': {
+      \   'command': 'factory',
+      \   'affinity': 'collection',
+      \   'alternate': 'app/models/%o.rb',
+      \   'related': 'db/schema.rb#%s',
+      \   'test': 'spec/models/%o_spec.rb',
+      \   'template': "FactoryGirl.define do\n  factory :%o do\n  end\nend",
+      \   'keywords': 'factory sequence'
+      \ },
+      \ 'spec/fabricators/*_fabricator.rb': {
+      \   'command': 'fabricator',
+      \   'affinity': 'model',
+      \   'alternate': 'app/models/%s.rb',
+      \   'related': 'db/schema.rb#%p',
+      \   'test': 'spec/models/%s_spec.rb',
+      \   'template': "Fabricator(:%s) do\nend",
+      \   'keywords': 'sequence initialize_with on_init transient after_build before_validation after_validation before_save before_create after_create after_save'
+      \ },
+      \ 'spec/support/*.rb': {'command': 'support'},
+      \ 'features/*.feature': {'command': 'feature'},
+      \ 'features/step_definitions/*_steps.rb': {'command': 'steps'},
+      \ 'features/support/*.rb': {'command': 'support'}}
+
