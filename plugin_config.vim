@@ -225,13 +225,19 @@ let g:mta_filetypes = {
 " ----------
 " SuperTab
 " ----------
-let g:SuperTabClosePreviewOnPopupClose=1
+let g:SuperTabClosePreviewOnPopupClose = 1
 
 " ---------------
 " YouCompleteMe
 " ---------------
 let g:ycm_complete_in_comments_and_strings=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
+
+" ---------------
+" Ultisnips
+" ---------------
+let g:UltiSnipsExpandTrigger="<leader><Enter>"
+let g:UltiSnipsListSnippets="<leader><tab>"
 
 " ---------------
 " vim-signify
