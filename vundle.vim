@@ -57,12 +57,14 @@ Bundle 'sk1418/Join'
 " Automatic Helpers
 Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'IndexedSearch'
+Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
 " Language Additions
 "   Ruby
 Bundle 'vim-ruby/vim-ruby'
