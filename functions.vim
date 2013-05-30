@@ -169,3 +169,12 @@ function WriteBuffer()
 endfunction
 
 nnoremap <silent> <enter> :call WriteBuffer()<CR>
+
+" ---------------
+" Run the current file as a Maven test
+" ---------------
+function JavaTest()
+  !mvn test -Dtest=%:t:r -DfailIfNoTests=true
+endfunction
+command! JavaTest call JavaTest()
+nnoremap <silent> <leader>jt :JavaTest<CR>
