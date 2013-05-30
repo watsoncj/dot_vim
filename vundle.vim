@@ -92,7 +92,7 @@ Bundle 'acustodioo/vim-tmux'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-cucumber'
-Bundle 'chaquotay/ftl-vim-syntax'
+Bundle 'dansomething/ftl-vim-syntax'
 Bundle 'vim-scripts/groovy.vim'
 Bundle 'tfnico/vim-gradle'
 " MatchIt
