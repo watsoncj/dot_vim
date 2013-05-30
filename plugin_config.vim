@@ -6,6 +6,12 @@
 " Eclim
 " -------
 let g:EclimCompletionMethod='omnifunc'
+nnoremap <Leader>ei :JavaImport<CR>
+nnoremap <Leader>eio :JavaImportOrganize<CR>
+nnoremap <Leader>eg :JavaSearchContext<CR>
+nnoremap <Leader>et :JavaHierarchy<CR>
+" Disable autocmoplete scratch buffer
+set completeopt-=preview
 
 " ---------------
 " Vundle
