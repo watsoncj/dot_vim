@@ -6,10 +6,12 @@
 " Eclim
 " -------
 let g:EclimCompletionMethod='omnifunc'
+nnoremap <Leader>ef :JavaFormat<CR>
 nnoremap <Leader>ei :JavaImport<CR>
 nnoremap <Leader>eio :JavaImportOrganize<CR>
 nnoremap <Leader>eg :JavaSearchContext<CR>
 nnoremap <Leader>et :JavaHierarchy<CR>
+nnoremap <Leader>er :JavaRename 
 " Disable autocmoplete scratch buffer
 set completeopt-=preview
 
