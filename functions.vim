@@ -173,8 +173,17 @@ nnoremap <silent> <enter> :call WriteBuffer()<CR>
 " ---------------
 " Run the current file as a Maven test
 " ---------------
-function JavaTest()
+function MavenTest()
   !mvn test -Dtest=%:t:r -DfailIfNoTests=true
 endfunction
-command! JavaTest call JavaTest()
-nnoremap <silent> <leader>jt :JavaTest<CR>
+command! MavenTest call MavenTest()
+nnoremap <silent> <leader>mt :MavenTest<CR>
+
+" ---------------
+" Run the current file as a Gradle test
+" ---------------
+function GradleTest()
+  !gw test -Dtest.single=%:t:r -i
+endfunction
+command! GradleTest call GradleTest()
+nnoremap <silent> <leader>gt :GradleTest<CR>
