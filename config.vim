@@ -32,7 +32,7 @@ set encoding=utf-8
 set noshowmode     " Don't show the mode since Powerline shows it
 set title          " Set the title of the window in the terminal to the file
 if exists('+colorcolumn')
-  set colorcolumn=80 " Color the 80th column differently as a wrapping guide.
+  set colorcolumn=120 " Color the 120th column differently as a wrapping guide.
 endif
 " Disable tooltips for hovering keywords in Vim
 if exists('+ballooneval')
@@ -83,7 +83,7 @@ set ignorecase " Case insensitive search
 set smartcase  " Non-case sensitive search
 set incsearch
 set hlsearch
-set wildignore+=*/target/*,*/build/*,*/node_modules/*,*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
+set wildignore+=*/test-output/*,*/bin/*,*/target/*,*/build/*,*/node_modules/*,*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
   \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc
 
 " ---------------
