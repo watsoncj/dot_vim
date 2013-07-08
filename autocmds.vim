@@ -17,9 +17,8 @@ if has("autocmd")
         \ endif
 
   " Fix trailing whitespace in my most used programming langauges
-  autocmd BufWritePre *.py,*.js,*.coffee,*.rb,*.erb,*.groovy,*.java,*.php,*.ftl silent! :StripTrailingWhiteSpace
+  autocmd BufWritePre *.py,*.css,*.less,*.js,*.coffee,*.rb,*.erb,*.groovy,*.java,*.php,*.ftl silent! :StripTrailingWhiteSpace
 
-  " Enable JavaScript autocomplete
-  " TODO This should really be done by the JS plugin
-  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+  " Enable JavaScript/CoffeeScript autocomplete with libraries support
+  autocmd FileType javascript,coffee setlocal omnifunc=syntaxcomplete#Complete
 endif

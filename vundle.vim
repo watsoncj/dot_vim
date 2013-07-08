@@ -55,6 +55,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'sk1418/Join'
 " Automatic Helpers
+Bundle 'vim-scripts/SyntaxComplete'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
 Bundle 'IndexedSearch'
 Bundle 'xolox/vim-misc'
