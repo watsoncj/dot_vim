@@ -16,7 +16,7 @@ Bundle 'gmarik/vundle'
 " ---------------
 
 " Navigation
-Bundle 'ZoomWin'
+Bundle 'regedarek/ZoomWin'
 " This fork is required due to remapping ; to :
 Bundle 'christoomey/vim-space'
 Bundle 'Lokaltog/vim-easymotion'
