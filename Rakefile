@@ -99,7 +99,7 @@ def parse_plugins_from_vimrc
     end
   end
 
-  plugins
+  plugins.sort_by { |k| k[:name].downcase }
 end
 
 # Converts a Vundle link to a URI
