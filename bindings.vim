@@ -114,7 +114,7 @@ nnoremap <silent> g3 :wincmd t<Bar>:wincmd j<CR>
 nnoremap <silent> g4 :wincmd b<CR>
 
 " Top Middle
-nnoremap <silent> gt g2<Bar>:wincmd h<CR>
+nnoremap <silent> gm g2<Bar>:wincmd h<CR>
 " Bottom Middle
 nnoremap <silent> gb g3<Bar>:wincmd l<CR>
 
