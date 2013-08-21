@@ -21,4 +21,10 @@ if has("autocmd")
 
   " Enable JavaScript/CoffeeScript autocomplete with libraries support
   autocmd FileType javascript,coffee setlocal omnifunc=syntaxcomplete#Complete
+
+  " Enable Rainbow Parentheses
+  autocmd BufNewFile,BufRead * RainbowParenthesesToggle
+  autocmd Syntax * RainbowParenthesesLoadRound
+  autocmd Syntax * RainbowParenthesesLoadSquare
+  autocmd Syntax * RainbowParenthesesLoadBraces
 endif
