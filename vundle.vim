@@ -21,6 +21,7 @@ Bundle 'regedarek/ZoomWin'
 Bundle 'christoomey/vim-space'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kien/ctrlp.vim'
+Bundle 'christoomey/vim-tmux-navigator'
 " UI Additions
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
