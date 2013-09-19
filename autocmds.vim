@@ -23,7 +23,7 @@ if has("autocmd")
   autocmd FileType javascript,coffee setlocal omnifunc=syntaxcomplete#Complete
 
   " Enable Rainbow Parentheses
-  autocmd BufNewFile,BufRead * RainbowParenthesesToggle
+  autocmd VimEnter * RainbowParenthesesToggle
   autocmd Syntax * RainbowParenthesesLoadRound
   autocmd Syntax * RainbowParenthesesLoadSquare
   autocmd Syntax * RainbowParenthesesLoadBraces
