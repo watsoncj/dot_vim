@@ -18,9 +18,15 @@ set completeopt-=preview
 " ---------------
 " Vundle
 " ---------------
-nnoremap <Leader>bi :BundleInstall<CR>
-nnoremap <Leader>bu :BundleInstall!<CR>
-nnoremap <Leader>bc :BundleClean<CR>
+command! ReloadVundle source ~/.vim/vundle.vim
+function BundleReloadAndRun(command)
+  :ReloadVundle
+  execute a:command
+endfunction
+
+nnoremap <Leader>bi :call BundleReloadAndRun("BundleInstall")<CR>
+nnoremap <Leader>bu :call BundleReloadAndRun("BundleInstall!")<CR>
+nnoremap <Leader>bc :call BundleReloadAndRun("BundleClean")<CR>
 
 " ---------------
 " space.vim
@@ -36,6 +42,11 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['scss'] }
+
+" Hat tip http://git.io/SPIBfg
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_full_redraws = 1
 
 " Platform-specific config files
 if has('win32') || has('win64')
@@ -60,7 +71,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
 " ---------------
 " Indent Guides
 " ---------------
-let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_enable_on_vim_startup = 1
 
 " ---------------
 " Session
@@ -72,18 +83,12 @@ nnoremap <leader>os :OpenSession<CR>
 " ---------------
 " Tabular
 " ---------------
-nnoremap <Leader>t= :Tabularize /=<CR>
-vnoremap <Leader>t= :Tabularize /=<CR>
-nnoremap <Leader>t: :Tabularize /:\zs<CR>
-vnoremap <Leader>t: :Tabularize /:\zs<CR>
-nnoremap <Leader>t, :Tabularize /,\zs<CR>
-vnoremap <Leader>t, :Tabularize /,\zs<CR>
-nnoremap <Leader>t> :Tabularize /=>\zs<CR>
-vnoremap <Leader>t> :Tabularize /=>\zs<CR>
-nnoremap <Leader>t- :Tabularize /-<CR>
-vnoremap <Leader>t- :Tabularize /-<CR>
-nnoremap <Leader>t" :Tabularize /"<CR>
-vnoremap <Leader>t" :Tabularize /"<CR>
+nnoremap <Leader>t= :Tabularize assignment<CR>
+vnoremap <Leader>t= :Tabularize assignment<CR>
+nnoremap <Leader>t: :Tabularize symbol<CR>
+vnoremap <Leader>t: :Tabularize symbol<CR>
+nnoremap <Leader>t, :Tabularize comma<CR>
+vnoremap <Leader>t, :Tabularize comma<CR>
 
 " ---------------
 " Fugitive
@@ -97,6 +102,10 @@ nnoremap <Leader>gu :Git pull<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 " Exit a diff by closing the diff window
 nnoremap <Leader>gx :wincmd h<CR>:q<CR>
+" Start git command
+nnoremap <leader>gi :Git<space>
+" Undo the last commit
+command! Gcundo :Git reset HEAD~1
 
 " ---------------
 " Zoomwin
@@ -120,26 +129,26 @@ nnoremap <leader>u :CtrlPCurFile<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
 
 " ---------------
-" Powerline
+" airline
 " ---------------
-" Keep ^B from showing on Windows in Powerline
-if has('win32') || has('win64')
-  let g:Powerline_symbols = 'compatible'
-elseif has('gui_macvim')
-  let g:Powerline_symbols = 'fancy'
-endif
-call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
-
-" Abbreviate All of the Mode Names
-let g:Powerline_mode_n = 'N'
-let g:Powerline_mode_i = 'I'
-let g:Powerline_mode_R = 'R'
-let g:Powerline_mode_v = 'V'
-let g:Powerline_mode_V = 'VL'
-let g:Powerline_mode_cv = 'VB'
-let g:Powerline_mode_s = 'S'
-let g:Powerline_mode_S = 'SL'
-let g:Powerline_mode_cs = 'SB'
+let g:airline_theme = 'jellybeans'
+let g:airline_powerline_fonts = 1
+let g:airline_detect_modified = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#hunks#enabled = 0
+let g:airline_mode_map = {
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'v'  : 'V',
+      \ 'V'  : 'VL',
+      \ 'c'  : 'CMD',
+      \ '' : 'VB',
+      \ }
+" Show the current working directory folder name
+let g:airline_section_b = '%{substitute(getcwd(), ".*\/", "", "g")} '
+" Just show the file name
+let g:airline_section_c = '%t'
 
 " ---------------
 " jellybeans.vim colorscheme tweaks
@@ -163,6 +172,12 @@ let g:rbpt_colorpairs = [
     \ ]
 
 " ---------------
+" jellybeans.vim colorscheme tweaks
+" ---------------
+" Make cssAttrs (center, block, etc.) the same color as units
+hi! link cssAttr Constant
+
+" ---------------
 " Ag.vim
 " ---------------
 nnoremap <silent> <leader>as :AgFromSearch<CR>
@@ -176,24 +191,11 @@ nnoremap <leader>ag :Ag<space>
 " Thanks to http://git.io/_XqKzQ
 let g:surround_35  = "#{\r}"
 
-" ---------------
-" Gifl - Google I'm Feeling Lucky URL Grabber
-" ---------------
-let g:LuckyOutputFormat='markdown'
-" I sometimes run vim without ruby support.
-let g:GIFLSuppressRubyWarning=1
-
 " ------------
 " sideways.vim
 " ------------
 noremap gs :SidewaysRight<cr>
 noremap gS :SidewaysLeft<cr>
-
-" ---------------
-" Markdown-Preview
-" ---------------
-nnoremap <Leader>md :MarkdownPreview<CR>
-vnoremap <Leader>md :MarkdownPreview<CR>
 
 " ---------------
 " switch.vim
@@ -208,11 +210,6 @@ nnoremap - :Switch<cr>
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
-
-" ---------------
-" vim-markdown
-" ---------------
-let g:vim_markdown_folding_disabled=1
 
 " ---------------
 " Unconditional Paste
@@ -237,6 +234,7 @@ let g:mta_filetypes = {
     \ 'xhtml' : 1,
     \ 'xml' : 1,
     \ 'handlebars' : 1,
+    \ 'eruby' : 1,
     \}
 
 " ----------
@@ -259,12 +257,13 @@ let g:UltiSnipsListSnippets="<leader><tab>"
 " ---------------
 " vim-signify
 " ---------------
-let g:signify_mapping_next_hunk="<leader>sn"
-let g:signify_mapping_prev_hunk="<leader>sp"
+let g:signify_mapping_next_hunk = '<leader>gj'
+let g:signify_mapping_prev_hunk = '<leader>gk'
 let g:signify_mapping_toggle_highlight="<nop>"
 let g:signify_mapping_toggle="<nop>"
 " Makes switching buffers in large repos have no delay
-let g:signify_update_on_bufenter=0
+let g:signify_update_on_bufenter = 0
+let g:signify_sign_overwrite = 0
 
 " ---------------
 " vim-abolish
@@ -275,16 +274,9 @@ nnoremap <leader>ss :%Subvert/
 " ---------------
 " vim-startify
 " ---------------
-let g:startify_bookmarks = [ '~/.vim/vimrc',
-                            \'~/.vim/config.vim',
-                            \'~/.vim/bindings.vim',
-                            \'~/.vim/plugin_bindings.vim',
-                            \'~/.vim/vundle.vim',
-                            \'~/dot_files/_zshrc'
-                            \'~/dot_files/aliases.sh',
-                            \'~/dot_files/environment.sh',
-                            \'~/dot_files/system_environment.sh']
-let g:startify_show_files_number=20
+let g:startify_list_order = ['files', 'dir', 'bookmarks', 'sessions']
+let g:startify_files_number = 5
+let g:startify_session_dir = '~/.vim/sessions'
 
 " ---------------
 " vim-togglecursor
@@ -335,3 +327,7 @@ let g:rails_projections = {
       \ 'features/step_definitions/*_steps.rb': {'command': 'steps'},
       \ 'features/support/*.rb': {'command': 'support'}}
 
+" ------
+" ColorV
+" ------
+let g:colorv_preview_ftype = 'css,html,javascript,scss,stylus'
