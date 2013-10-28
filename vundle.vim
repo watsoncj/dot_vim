@@ -88,7 +88,6 @@ Bundle 'acustodioo/vim-tmux'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-cucumber'
 Bundle 'dansomething/ftl-vim-syntax'
-Bundle 'vim-scripts/groovy.vim'
 Bundle 'tfnico/vim-gradle'
 Bundle 'andersoncustodio/vim-tmux'
 " MatchIt
