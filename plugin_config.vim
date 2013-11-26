@@ -11,7 +11,8 @@ nnoremap <Leader>ei :JavaImport<CR>
 nnoremap <Leader>eio :JavaImportOrganize<CR>
 nnoremap <Leader>eg :JavaSearchContext<CR>
 nnoremap <Leader>et :JavaHierarchy<CR>
-nnoremap <Leader>er :JavaRename 
+nnoremap <Leader>er :JavaRename
+nnoremap <Leader>ec :JavaCorrect<CR>
 " Disable autocmoplete scratch buffer
 set completeopt-=preview
 
@@ -179,6 +180,7 @@ hi! link cssAttr Constant
 " ---------------
 nnoremap <silent> <leader>as :AgFromSearch<CR>
 nnoremap <leader>ag :Ag<space>
+nnoremap <leader>sag :Ag <c-r><c-w>
 
 " ---------------
 " surround.vim
