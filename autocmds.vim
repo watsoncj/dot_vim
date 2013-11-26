@@ -3,6 +3,10 @@
 " ----------------------------------------
 
 if has("autocmd")
+  " Clear the auto command group so we don't define it multiple times
+  " Idea from http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
+  autocmd!
+
   " No formatting on o key newlines
   autocmd BufNewFile,BufEnter * set formatoptions-=o
 

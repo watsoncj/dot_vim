@@ -1,7 +1,5 @@
 # The Vim Configuration of Champions
 
-[See dot_vim's Stats on GitEgo](http://gitego.com/dansomething/dot_vim)
-
 ## Installation
 
 1. `git clone http://github.com/dansomething/dot_vim.git ~/.vim`
@@ -10,17 +8,20 @@
 4. Enjoy enhanced productivity, increased levitation, reduced
    watermelon-related accidents, and startling sex appeal.
 
-### Manual Vundle Install
-1. `cd ~/.vim`
-2. Install [Vundle](https://github.com/gmarik/vundle) with `git clone
+### Manual Install
+1. `git clone http://github.com/dansomething/dot_vim.git ~/.vim`
+2. `cd ~/.vim`
+3. Install [Vundle](https://github.com/gmarik/vundle) with `git clone
    http://github.com/gmarik/vundle.git bundle/vundle`
-3. `vim +BundleInstall +qall` _installs all of the plugins_
+4. `vim +BundleInstall +qall` _installs all of the plugins_
 
 ## Screenshots
 
 **MacVim**
 
-[![MacVim](https://github.com/mutewinter/dot_vim/raw/master/screenshots/MacVim.png)](https://github.com/mutewinter/dot_vim/raw/master/screenshots/MacVim1.png)
+[![MacVim][ss]][ss]
+
+[ss]: https://github.com/mutewinter/dot_vim/raw/master/screenshots/MacVim.png
 
 ## Requirements
 
@@ -34,6 +35,9 @@
 * Typing `jk` insert mode is equivalent to `Escape`.
 * Pressing `enter` in normal mode saves the current buffer.
 
+And many more. See [`bindings.vim`](bindings.vim) and
+[`plugins.vim`](plugins.vim) for more.
+
 ## Notes
 
 Be sure to always edit the vimrc using `,v`, which opens the vimrc in the .vim
@@ -44,16 +48,19 @@ folder. Vim has a nasty habit of overriding symlinks.
 Here's a list of plugins that require further installation or have
 dependencies.
 
- * [Fugitive](https://github.com/tpope/vim-fugitive) Requires Git to be
- installed.
- * [syntastic](https://github.com/scrooloose/syntastic) Requires many different
- binaries installed depending on what filetypes you want it to check. See the
- [FAQ](https://github.com/scrooloose/syntastic#faq) for more information.
- * [Ag.vim](https://github.com/rking/ag.vim) Requires
- [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) to be
- installed.
- * [Menlo for Powerline](https://gist.github.com/1627888) The custom font I'm
- using for vim-powerline.
+* [Fugitive](https://github.com/tpope/vim-fugitive) Requires Git to be
+  installed.
+* [syntastic](https://github.com/scrooloose/syntastic) Requires many different
+  binaries installed depending on what filetypes you want it to check. See the
+  [FAQ](https://github.com/scrooloose/syntastic#faq) for more information.
+* [Ag.vim](https://github.com/rking/ag.vim) Requires
+  [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) to be
+  installed.
+* [Source Code for Powerline](http://git.io/H3fYBg) The custom font I'm using
+  for vim-airline.
+* [CtrlP C Matching Extension](https://github.com/JazzCore/ctrlp-cmatcher)
+  requires compilation. See the steps [in its
+  readme](https://github.com/JazzCore/ctrlp-cmatcher).
 
 ## Plugin List
 
