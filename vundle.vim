@@ -66,6 +66,11 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 " Language Additions
+"   Clojure
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
+Bundle 'guns/vim-sexp'
 "   Ruby
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
@@ -84,7 +89,7 @@ Bundle 'indenthtml.vim'
 "   Other Languages
 Bundle 'mutewinter/taskpaper.vim'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'acustodioo/vim-tmux'
+Bundle 'andersoncustodio/vim-tmux'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-cucumber'
 Bundle 'dansomething/ftl-vim-syntax'
