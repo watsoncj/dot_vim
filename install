@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+VUNDLE="http://github.com/gmarik/vundle.git"
+VUNDLE_TARGET="$HOME/.vim/bundle/vundle"
+
+if [ -s $VUNDLE_TARGET ]; then
+  echo "Vundle exists, skipping install."
+else
+  echo "Installing Vundle"
+  git clone $VUNDLE $VUNDLE_TARGET
+fi
+
+declare -a filesToLink=(vimrc gvimrc)
+
+for file in ${filesToLink[@]}; do
+  dotFile="$HOME/.$file"
+  if [ -s $dotFile ]; then
+    echo "${dotFile} already exists, skipping link."
+  else
+    ln -s $HOME/.vim/$file $dotFile
+    echo "Created link for #{file} in your home folder."
+  fi
+done
+
+echo "Installing vim plugins via Vundle"
+vim +BundleInstall! +qall
