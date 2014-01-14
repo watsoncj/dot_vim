@@ -12,9 +12,18 @@ nnoremap <Leader>eio :JavaImportOrganize<CR>
 nnoremap <Leader>eg :JavaSearchContext<CR>
 nnoremap <Leader>et :JavaHierarchy<CR>
 nnoremap <Leader>er :JavaRename
+nnoremap <Leader>ej :JUnit<CR>
 nnoremap <Leader>ec :JavaCorrect<CR>
+nnoremap <Leader>esr :JavaSearch -x references -s all<CR>
+nnoremap <Leader>eot :JavaSearch -t type -s all -p
+nnoremap <Leader>eor :LocateFile<CR>
+nnoremap <Leader>ep :ProjectProblems!<CR>
+nnoremap <Leader>era :ProjectRefreshAll<CR>
+nnoremap <Leader>eo :JavaImpl<CR>
+
 " Disable autocmoplete scratch buffer
 set completeopt-=preview
+set completeopt+=longest
 
 " ---------------
 " Vundle
@@ -56,6 +65,40 @@ if has('win32') || has('win64')
 else
   let g:syntastic_javascript_jsl_conf=$HOME.'/.vim/config/unix/syntastic/jsl.conf'
 endif
+
+" ---------------
+" Tags
+" ---------------
+let g:vim_tags_auto_generate = 0
+
+" ---------------
+" Tagbar
+" ---------------
+nnoremap <leader>tt :TagbarToggle<CR>
+nnoremap <leader>ta :TagbarOpenAutoClose<CR>
+let g:tagbar_compact = 1
+
+let g:tagbar_type_coffee = {
+    \ 'ctagstype' : 'coffee',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 'm:methods',
+        \ 'f:functions',
+        \ 'v:variables',
+        \ 'f:fields',
+    \ ]
+\ }
+
+let g:tagbar_type_groovy = {
+    \ 'ctagstype' : 'groovy',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'c:class',
+        \ 'i:interface',
+        \ 'f:function',
+        \ 'v:variables',
+    \ ]
+\ }
 
 " ---------------
 " NERDTree
@@ -196,6 +239,11 @@ let g:surround_35  = "#{\r}"
 noremap gs :SidewaysRight<cr>
 noremap gS :SidewaysLeft<cr>
 
+omap aa <Plug>SidewaysArgumentTextobjA
+xmap aa <Plug>SidewaysArgumentTextobjA
+omap ia <Plug>SidewaysArgumentTextobjI
+xmap ia <Plug>SidewaysArgumentTextobjI
+
 " ---------------
 " switch.vim
 " ---------------
@@ -246,6 +294,7 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " ---------------
 let g:ycm_complete_in_comments_and_strings=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
+let g:ycm_collect_identifiers_from_tags_files=1
 
 " ---------------
 " Ultisnips
