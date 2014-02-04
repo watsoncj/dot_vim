@@ -69,7 +69,7 @@ endif
 " ---------------
 " Tags
 " ---------------
-let g:vim_tags_auto_generate = 0
+let g:vim_tags_auto_generate = 1
 
 " ---------------
 " Tagbar
@@ -223,6 +223,7 @@ hi! link cssAttr Constant
 " ---------------
 nnoremap <silent> <leader>as :AgFromSearch<CR>
 nnoremap <leader>ag :Ag<space>
+vnoremap <leader>ag "xy :Ag "<c-r>x"
 nnoremap <leader>sag :Ag <c-r><c-w>
 
 " ---------------
@@ -294,7 +295,7 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " ---------------
 let g:ycm_complete_in_comments_and_strings=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
-let g:ycm_collect_identifiers_from_tags_files=1
+let g:ycm_collect_identifiers_from_tags_files=0
 
 " ---------------
 " Ultisnips
