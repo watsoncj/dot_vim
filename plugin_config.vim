@@ -42,13 +42,13 @@ nnoremap <Leader>bc :call BundleReloadAndRun("BundleClean")<CR>
 " space.vim
 " ---------------
 " Disables space mappings in select mode to fix snipMate.
-let g:space_disable_select_mode=1
+let g:space_disable_select_mode = 1
 
 " ---------------
 " Syntastic
 " ---------------
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['scss'] }
@@ -106,9 +106,9 @@ let g:tagbar_type_groovy = {
 nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 let g:NERDTreeWinSize = 40
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
-let g:NERDTreeMinimalUI=1
+let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeChDirMode = 2 " Change the NERDTree directory to the root node
+let g:NERDTreeMinimalUI = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
   \&& b:NERDTreeType == "primary") | q | endif
 
@@ -120,8 +120,8 @@ let g:indent_guides_enable_on_vim_startup = 1
 " ---------------
 " Session
 " ---------------
-let g:session_autosave=0
-let g:session_autoload=0
+let g:session_autosave = 0
+let g:session_autoload = 0
 nnoremap <leader>os :OpenSession<CR>
 
 " ---------------
@@ -262,7 +262,7 @@ let g:html_indent_style1 = "inc"
 " ---------------
 " Unconditional Paste
 " ---------------
-let g:UnconditionalPaste_NoDefaultMappings=1
+let g:UnconditionalPaste_NoDefaultMappings = 1
 nnoremap gcP <Plug>UnconditionalPasteCharBefore
 nnoremap gcp <Plug>UnconditionalPasteCharAfter
 
@@ -293,9 +293,10 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " ---------------
 " YouCompleteMe
 " ---------------
-let g:ycm_complete_in_comments_and_strings=1
-let g:ycm_collect_identifiers_from_comments_and_strings=1
-let g:ycm_collect_identifiers_from_tags_files=0
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_complete_in_comments_and_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_collect_identifiers_from_tags_files = 0
 
 " ---------------
 " Ultisnips
