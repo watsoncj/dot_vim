@@ -74,12 +74,10 @@ noremap <leader>; mqA;<Esc>`q
 " Leader Commands
 " ---------------
 
-" Toggle spelling mode with ,s
-nnoremap <silent> <leader>s :set spell!<CR>
 " Edit vimrc with ,v
 nnoremap <silent> <leader>v :e ~/.vim/vimrc<CR>
 " Quickly switch to last buffer
-nnoremap <leader>, :e#<CR>
+nnoremap <leader>. :e#<CR>
 " Change to the directory of the currently open file
 nmap <silent> <leader>cd :cd %:p:h<CR>
 " Change the directory only for the current window
