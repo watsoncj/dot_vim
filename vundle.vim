@@ -57,7 +57,6 @@ Bundle 'tpope/vim-dispatch'
 " Automatic Helpers
 Bundle 'vim-scripts/SyntaxComplete'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
-Bundle 'IndexedSearch'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'Raimondi/delimitMate'
