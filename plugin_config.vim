@@ -174,6 +174,8 @@ let g:ctrlp_map = ''
 " Ensure max height isn't too large. (for performance)
 let g:ctrlp_max_height = 10
 
+let g:ctrlp_show_hidden = 1
+
 " Leader Commands
 nnoremap <leader>t :CtrlPRoot<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
