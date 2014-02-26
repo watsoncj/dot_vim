@@ -85,6 +85,7 @@ let g:vim_tags_auto_generate = 1
 nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader>ta :TagbarOpenAutoClose<CR>
 let g:tagbar_compact = 1
+let g:tagbar_width = 60
 
 let g:tagbar_type_coffee = {
     \ 'ctagstype' : 'coffee',
@@ -107,6 +108,13 @@ let g:tagbar_type_groovy = {
         \ 'v:variables',
     \ ]
 \ }
+
+let g:tagbar_type_cucumber = {
+    \ 'ctagstype': 'cucumber',
+    \ 'kinds': [
+        \'d:definition'
+      \]
+    \}
 
 " ---------------
 " NERDTree
