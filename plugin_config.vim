@@ -231,12 +231,6 @@ let g:rbpt_colorpairs = [
     \ ]
 
 " ---------------
-" jellybeans.vim colorscheme tweaks
-" ---------------
-" Make cssAttrs (center, block, etc.) the same color as units
-hi! link cssAttr Constant
-
-" ---------------
 " Ag.vim
 " ---------------
 nnoremap <silent> <leader>as :AgFromSearch<CR>
