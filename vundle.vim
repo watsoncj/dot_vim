@@ -65,7 +65,9 @@ Bundle 'ervandew/supertab'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'szw/vim-tags'
+Bundle 'editorconfig/editorconfig-vim'
 " Language Additions
 "   Clojure
 Bundle 'tpope/vim-fireplace'
