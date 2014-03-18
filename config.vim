@@ -92,6 +92,8 @@ set showmatch   " Show matching brackets.
 set matchtime=2 " How many tenths of a second to blink
 " Show invisible characters
 set list
+" Ignore whitespace changes in vimdiff
+set diffopt+=iwhite
 
 " Show trailing spaces as dots and carrots for extended lines.
 " From Janus, http://git.io/PLbAlw
