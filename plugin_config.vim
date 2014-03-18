@@ -13,6 +13,7 @@ nnoremap <Leader>eg :JavaSearchContext<CR>
 nnoremap <Leader>et :JavaHierarchy<CR>
 nnoremap <Leader>er :JavaRename
 nnoremap <Leader>ej :JUnit<CR>
+nnoremap <Leader>ejf :JUnit %<CR>
 nnoremap <Leader>ec :JavaCorrect<CR>
 nnoremap <Leader>esr :JavaSearch -x references -s all<CR>
 nnoremap <Leader>eot :JavaSearch -t type -s all -p
@@ -153,6 +154,7 @@ vnoremap <Leader>t, :Tabularize comma<CR>
 " ---------------
 " Fugitive
 " ---------------
+nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gs :Gstatus<CR>
