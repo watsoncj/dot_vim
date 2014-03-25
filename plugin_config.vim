@@ -210,6 +210,8 @@ let g:airline_mode_map = {
       \ 'c'  : 'CMD',
       \ '' : 'VB',
       \ }
+" Just show the file name
+let g:airline_section_c = '%t'
 
 " ---------------
 " jellybeans.vim colorscheme tweaks
