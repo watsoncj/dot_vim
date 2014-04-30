@@ -164,8 +164,3 @@ nnoremap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
 " Create newlines without entering insert mode
 nnoremap go o<Esc>k
 nnoremap gO O<Esc>j
-
-"---------
-" Clojure
-"---------
-nnoremap <silent> <leader>sh :Slamhound<CR>

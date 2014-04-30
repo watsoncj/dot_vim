@@ -397,3 +397,8 @@ let g:rails_projections = {
 " ColorV
 " ------
 let g:colorv_preview_ftype = 'css,html,javascript,scss,stylus,less'
+
+"---------
+" Clojure
+"---------
+nnoremap <silent> <leader>sh :Slamhound<CR>
