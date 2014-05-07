@@ -69,6 +69,8 @@ Bundle 'szw/vim-tags'
 Bundle 'editorconfig/editorconfig-vim'
 " Language Additions
 "   Clojure
+Bundle 'tpope/vim-projectionist'
+Bundle 'tpope/vim-leiningen'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
