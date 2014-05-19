@@ -1,5 +1,4 @@
-/bundle
-/sessions
+bundle
+sessions
 .DS_Store
 extra.vim
-/netrwhist
