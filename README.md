@@ -2,18 +2,18 @@
 
 ## Installation
 
-1. `git clone http://github.com/dansomething/dot_vim.git ~/.vim`
-2. `cd ~/.vim`
-3. `./install` to create the .vimrc symbolic link and install plugins.
-4. Enjoy enhanced productivity, increased levitation, reduced
+
+1. `bash <(curl -s https://raw.github.com/dansomething/dot_vim/master/install)`
+2. Enjoy enhanced productivity, increased levitation, reduced
    watermelon-related accidents, and startling sex appeal.
 
 ### Manual Install
 1. `git clone http://github.com/dansomething/dot_vim.git ~/.vim`
-2. `cd ~/.vim`
-3. Install [Vundle](https://github.com/gmarik/vundle) with `git clone
-   http://github.com/gmarik/vundle.git bundle/vundle`
-4. `vim +BundleInstall +qall` _installs all of the plugins_
+2. `ln -s ~/.vim/vimrc ~/.vimrc`
+3. `ln -s ~/.vim/gvimrc ~/.gvimrc`
+4. Install [Vundle](https://github.com/gmarik/vundle) with `git clone
+   http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+5. `vim +BundleInstall +qall` _installs all of the plugins_
 
 ## Screenshots
 
