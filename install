@@ -26,24 +26,12 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 homeshick clone $DOT_VIM
 homeshick symlink dot_vim
 
-if [ -s $VUNDLE_TARGET ]; then
+f [ -s $VUNDLE_TARGET ]; then
   echo "Vundle exists, skipping install."
 else
   echo "Installing Vundle"
   git clone $VUNDLE $VUNDLE_TARGET
 fi
-
-declare -a filesToLink=(vimrc gvimrc)
-
-for file in ${filesToLink[@]}; do
-  dotFile="$HOME/.$file"
-  if [ -s $dotFile ]; then
-    echo "${dotFile} already exists, skipping link."
-  else
-    ln -s $HOME/.vim/$file $dotFile
-    echo "Created link for #{file} in your home folder."
-  fi
-done
 
 echo "Installing vim plugins via Vundle"
 vim +BundleInstall! +qall
