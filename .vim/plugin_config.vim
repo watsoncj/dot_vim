@@ -117,6 +117,17 @@ let g:tagbar_type_cucumber = {
       \]
     \}
 
+let g:tagbar_type_less = {
+    \ 'ctagstype' : 'less',
+    \ 'kinds'     : [
+        \ 'c:class',
+        \ 'i:id',
+        \ 'm:media',
+        \ 't:tag',
+        \ 'v:variables',
+    \ ]
+\ }
+
 " ---------------
 " NERDTree
 " ---------------
@@ -312,7 +323,6 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_complete_in_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 0
 
 " ---------------
 " Ultisnips
