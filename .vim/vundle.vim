@@ -64,7 +64,8 @@ if v:version > 703 || (v:version == 703 && has('patch584'))
   Plugin 'Valloric/YouCompleteMe'
 endif
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plugin 'dansomething/vim-snippets'
+"Plugin 'honza/vim-snippets'
 Plugin 'szw/vim-tags'
 Plugin 'editorconfig/editorconfig-vim'
 " Language Additions
