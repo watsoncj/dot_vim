@@ -3,7 +3,7 @@
 ## Installation
 
 
-1. `bash <(curl -s https://raw.github.com/dansomething/dot_vim/master/install)`
+1. `bash <(curl -s https://raw.githubusercontent.com/watsoncj/dot_vim/master/install)`
 2. Enjoy enhanced productivity, increased levitation, reduced
    watermelon-related accidents, and startling sex appeal.
 
