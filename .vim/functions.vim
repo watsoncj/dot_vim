@@ -131,9 +131,12 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
-"strip all trailing white space
-command! StripTrailingWhiteSpace :call Preserve("%s/\\s\\+$//e")<CR>
-nnoremap stw :StripTrailingWhiteSpace<CR>
+function! StripTrailingWhiteSpaceAndSave()
+  :call Preserve("%s/\\s\\+$//e")<CR>
+  :write
+endfunction
+command! StripTrailingWhiteSpaceAndSave :call StripTrailingWhiteSpaceAndSave()<CR>
+nnoremap <silent> <leader>stw :silent! StripTrailingWhiteSpaceAndSave<CR>
 
 " ---------------
 " Paste using Paste Mode
@@ -155,21 +158,75 @@ command! PasteWithPasteMode call PasteWithPasteMode()
 nnoremap <silent> <leader>p :PasteWithPasteMode<CR>
 
 " ---------------
-" Write Buffer
+" Write Buffer if Necessary
 "
-" Writes the current buffer unless we're the in QuickFix mode.
+" Writes the current buffer if it's needed, unless we're the in QuickFix mode.
 " ---------------
 
-function WriteBuffer()
-  if &filetype == "qf"
-    execute "normal! \<enter>"
-  else
+function WriteBufferIfNecessary()
+  if &modified && !&readonly
     :write
   endif
 endfunction
+command! WriteBufferIfNecessary call WriteBufferIfNecessary()
 
-nnoremap <silent> <enter> :call WriteBuffer()<CR>
+function CRWriteIfNecessary()
+  if &filetype == "qf"
+    " Execute a normal enter when in Quickfix list.
+    execute "normal! \<enter>"
+  else
+    WriteBufferIfNecessary
+  endif
+endfunction
 
+" Clear the search buffer when hitting return
+" Idea for MapCR from http://git.io/pt8kjA
+function! MapCR()
+  nnoremap <silent> <enter> :call CRWriteIfNecessary()<CR>
+endfunction
+call MapCR()
+
+" ---------------
+" Make a scratch buffer with all of the leader keybindings.
+"
+" Adapted from http://ctoomey.com/posts/an-incremental-approach-to-vim/
+" ---------------
+function! ListLeaders()
+  silent! redir @b
+  silent! nmap <LEADER>
+  silent! redir END
+  silent! new
+  silent! set buftype=nofile
+  silent! set bufhidden=hide
+  silent! setlocal noswapfile
+  silent! put! b
+  silent! g/^s*$/d
+  silent! %s/^.*,//
+  silent! normal ggVg
+  silent! sort
+  silent! let lines = getline(1,"$")
+  silent! normal <esc>
+endfunction
+
+command! ListLeaders :call ListLeaders()
+
+function! CopyMatches(reg)
+  let hits = []
+  %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/ge
+  let reg = empty(a:reg) ? '+' : a:reg
+  execute 'let @'.reg.' = join(hits, "\n") . "\n"'
+endfunction
+command! -register CopyMatches call CopyMatches(<q-reg>)
+
+function! YankLineWithoutNewline()
+  let l = line(".")
+  let c = col(".")
+  normal ^y$
+  " Clean up: restore previous search history, and cursor position
+  call cursor(l, c)
+endfunction
+
+nnoremap <silent>yl :call YankLineWithoutNewline()<CR>
 " ---------------
 " Run the current file as a Maven test
 " ---------------
