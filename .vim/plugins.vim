@@ -2,6 +2,19 @@
 " Plugin Configuration
 " ----------------------------------------
 
+" ---------------
+" Vundle
+" ---------------
+command! ReloadVundle source ~/.vim/vundle.vim
+function PluginReloadAndRun(command)
+  :ReloadVundle
+  execute a:command
+endfunction
+
+nnoremap <Leader>pi :call PluginReloadAndRun("PluginInstall")<CR>
+nnoremap <Leader>pu :call PluginReloadAndRun("PluginInstall!")<CR>
+nnoremap <Leader>pc :call PluginReloadAndRun("PluginClean")<CR>
+
 " -------
 " Eclim
 " -------
@@ -33,19 +46,6 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 
 nmap <Leader>s <Plug>(easymotion-sn)
-
-" ---------------
-" Vundle
-" ---------------
-command! ReloadVundle source ~/.vim/vundle.vim
-function BundleReloadAndRun(command)
-  :ReloadVundle
-  execute a:command
-endfunction
-
-nnoremap <Leader>bi :call BundleReloadAndRun("BundleInstall")<CR>
-nnoremap <Leader>bu :call BundleReloadAndRun("BundleInstall!")<CR>
-nnoremap <Leader>bc :call BundleReloadAndRun("BundleClean")<CR>
 
 " ---------------
 " space.vim
@@ -194,14 +194,28 @@ let g:ctrlp_map = ''
 
 " Ensure max height isn't too large. (for performance)
 let g:ctrlp_max_height = 10
-
 let g:ctrlp_show_hidden = 1
+" Fix new windows opening in split from startify
+let g:ctrlp_reuse_window = 'startify'
+let g:ctrlp_mruf_max = 350
+let g:ctrlp_mruf_default_order = 0
 
 " Leader Commands
 nnoremap <leader>t :CtrlPRoot<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>u :CtrlPCurFile<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " ---------------
 " airline
@@ -294,14 +308,6 @@ nnoremap gcP <Plug>UnconditionalPasteCharBefore
 nnoremap gcp <Plug>UnconditionalPasteCharAfter
 
 " ---------------
-" Gist.vim
-" ---------------
-if has('macunix') || has('mac')
-  let g:gist_clip_command = 'pbcopy'
-endif
-let g:gist_post_private=1
-
-" ---------------
 " MatchTagAlways
 " ---------------
 let g:mta_filetypes = {
@@ -321,6 +327,7 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " YouCompleteMe
 " ---------------
 let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
