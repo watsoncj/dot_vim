@@ -3,7 +3,7 @@
 DOT_VIM="https://github.com/dansomething/dot_vim.git"
 CMDS="git vim"
 
-VUNDLE="https://github.com/gmarik/vundle.git"
+VUNDLE="https://github.com/gmarik/Vundle.vim.git"
 VUNDLE_TARGET="$HOME/.vim/bundle/vundle"
 
 # Check for necessary commands
@@ -34,4 +34,4 @@ else
 fi
 
 echo "Installing vim plugins via Vundle"
-vim +BundleInstall! +qall
+vim +PluginInstall! +qall
