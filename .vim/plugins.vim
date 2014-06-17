@@ -392,3 +392,8 @@ let g:colorv_preview_ftype = 'css,html,javascript,scss,stylus,less'
 " Clojure
 "---------
 nnoremap <silent> <leader>sh :Slamhound<CR>
+
+"-------------
+" CoffeeScript
+"-------------
+nnoremap <silent> <leader>vc :CoffeeWatch vert<CR>
