@@ -397,3 +397,9 @@ nnoremap <silent> <leader>sh :Slamhound<CR>
 " CoffeeScript
 "-------------
 nnoremap <silent> <leader>vc :CoffeeWatch vert<CR>
+
+"-------
+" Tasks
+"-------
+nnoremap <silent> <leader>tx :call Toggle_task_status()<CR>
+vnoremap <silent> tx :call Toggle_task_status()<CR>
