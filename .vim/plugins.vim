@@ -144,6 +144,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
 " Indent Guides
 " ---------------
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 " ---------------
 " Session
@@ -166,6 +167,7 @@ vnoremap <Leader>t, :Tabularize comma<CR>
 " Fugitive
 " ---------------
 nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gl :Glog --graph --pretty=oneline --abbrev-commit -n 20<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gs :Gstatus<CR>
