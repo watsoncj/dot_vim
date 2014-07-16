@@ -69,6 +69,7 @@ Plugin 'dansomething/vim-snippets'
 Plugin 'szw/vim-tags'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'samsonw/vim-task'
+Plugin 'rizzatti/dash.vim'
 " Language Additions
 "   Clojure
 Plugin 'tpope/vim-leiningen'
