@@ -51,7 +51,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'mutewinter/UnconditionalPaste'
 Plugin 'HelpClose'
 Plugin 'dansomething/vim-visual-star-search'
-Plugin 'sk1418/Join'
+Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-dispatch'
 " Automatic Helpers
 Plugin 'vim-scripts/SyntaxComplete'
