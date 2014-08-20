@@ -96,7 +96,7 @@ nmap <silent> <leader>cd :cd %:p:h<CR>
 nmap <silent> <leader>lcd :lcd %:p:h<CR>
 
 " Search and replace word under cursor
-nnoremap <leader>sr :%s/\<<c-r><c-w>\>//g<left><left>
+nnoremap <leader>sr :%s/\<<c-r><c-w>\>//<left>
 
 " Smart insert semicolon
 noremap <leader>; mqA;<Esc>`q

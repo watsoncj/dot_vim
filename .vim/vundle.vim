@@ -5,7 +5,7 @@
 set nocompatible " be iMproved
 filetype off     " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -51,7 +51,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'mutewinter/UnconditionalPaste'
 Plugin 'HelpClose'
 Plugin 'dansomething/vim-visual-star-search'
-Plugin 'sk1418/Join'
+Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-dispatch'
 " Automatic Helpers
 Plugin 'vim-scripts/SyntaxComplete'
@@ -68,6 +68,8 @@ Plugin 'dansomething/vim-snippets'
 "Plugin 'honza/vim-snippets'
 Plugin 'szw/vim-tags'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'samsonw/vim-task'
+Plugin 'rizzatti/dash.vim'
 " Language Additions
 "   Clojure
 Plugin 'tpope/vim-leiningen'
@@ -84,7 +86,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'elzr/vim-json'
 Plugin 'othree/javascript-libraries-syntax.vim'
 "   HTML
-Plugin 'nono/vim-handlebars'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'othree/html5.vim'
 Plugin 'indenthtml.vim'
 "   Other Languages

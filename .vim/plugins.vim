@@ -79,6 +79,7 @@ endif
 " Tags
 " ---------------
 let g:vim_tags_auto_generate = 1
+let g:vim_tags_use_vim_dispatch = 1
 
 " ---------------
 " Tagbar
@@ -144,6 +145,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType")
 " Indent Guides
 " ---------------
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 " ---------------
 " Session
@@ -155,24 +157,33 @@ nnoremap <leader>os :OpenSession<CR>
 " ---------------
 " Tabular
 " ---------------
-nnoremap <Leader>t= :Tabularize assignment<CR>
-vnoremap <Leader>t= :Tabularize assignment<CR>
-nnoremap <Leader>t: :Tabularize symbol<CR>
-vnoremap <Leader>t: :Tabularize symbol<CR>
-nnoremap <Leader>t, :Tabularize comma<CR>
-vnoremap <Leader>t, :Tabularize comma<CR>
+nnoremap <Leader>t& :Tabularize /&<CR>
+vnoremap <Leader>t& :Tabularize /&<CR>
+nnoremap <Leader>t= :Tabularize /=<CR>
+vnoremap <Leader>t= :Tabularize /=<CR>
+nnoremap <Leader>t: :Tabularize /:<CR>
+vnoremap <Leader>t: :Tabularize /:<CR>
+nnoremap <Leader>t:: :Tabularize /:\zs<CR>
+vnoremap <Leader>t:: :Tabularize /:\zs<CR>
+nnoremap <Leader>t, :Tabularize /,<CR>
+vnoremap <Leader>t, :Tabularize /,<CR>
+nnoremap <Leader>t,, :Tabularize /,\zs<CR>
+vnoremap <Leader>t,, :Tabularize /,\zs<CR>
+nnoremap <Leader>t<Bar> :Tabularize /<Bar><CR>
+vnoremap <Leader>t<Bar> :Tabularize /<Bar><CR>
 
 " ---------------
 " Fugitive
 " ---------------
 nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gl :Glog --graph --pretty=oneline --abbrev-commit -n 20<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gp :Git push<CR>
  " Mnemonic, gu = Git Update
 nnoremap <Leader>gu :Git pull<CR>
-nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gd :Gvdiff<CR>
 " Exit a diff by closing the diff window
 nnoremap <Leader>gx :wincmd h<CR>:q<CR>
 " Start git command
@@ -372,18 +383,6 @@ hi StartifyHeader  ctermfg=203
 hi StartifyPath    ctermfg=245
 hi StartifySlash   ctermfg=240
 
-" Show Startify and NERDTree on start
-autocmd VimEnter *
-            \ if !argc() |
-            \   Startify |
-            \   NERDTree |
-            \   execute "normal \<c-w>w" |
-            \ endif
-" Keep NERDTree from opening a split when startify is open
-autocmd FileType startify setlocal buftype=
-
-let g:startify_recursive_dir = 1
-
 " ---------------
 " vim-abolish
 " ---------------
@@ -395,50 +394,6 @@ nnoremap <leader>ss :%Subvert/
 " ---------------
 let g:togglecursor_leave='line'
 
-" ---------------
-" rails.vim
-" ---------------
-command! Remigrate :Rake db:drop | Rake db:create | Rake db:migrate | Rake test:prepare
-
-" Add custom commands for Rails.vim
-" Thanks to http://git.io/_cBVeA and http://git.io/xIKnCw
-let g:rails_projections = {
-      \ 'app/models/*.rb': {'keywords': 'validates_conditional'},
-      \ 'db/seeds/*.rb': {'command': 'seeds'},
-      \ 'db/seeds.rb': {'command': 'seeds'},
-      \ 'spec/factories.rb': {'command': 'factory'},
-      \ 'spec/factories/*_factory.rb': {
-      \   'command': 'factory',
-      \   'affinity': 'model',
-      \   'alternate': 'app/models/%s.rb',
-      \   'related': 'db/schema.rb#%p',
-      \   'test': 'spec/models/%s_spec.rb',
-      \   'template': "FactoryGirl.define do\n  factory :%s do\n  end\nend",
-      \   'keywords': 'factory sequence'
-      \ },
-      \ 'spec/factories/*.rb': {
-      \   'command': 'factory',
-      \   'affinity': 'collection',
-      \   'alternate': 'app/models/%o.rb',
-      \   'related': 'db/schema.rb#%s',
-      \   'test': 'spec/models/%o_spec.rb',
-      \   'template': "FactoryGirl.define do\n  factory :%o do\n  end\nend",
-      \   'keywords': 'factory sequence'
-      \ },
-      \ 'spec/fabricators/*_fabricator.rb': {
-      \   'command': 'fabricator',
-      \   'affinity': 'model',
-      \   'alternate': 'app/models/%s.rb',
-      \   'related': 'db/schema.rb#%p',
-      \   'test': 'spec/models/%s_spec.rb',
-      \   'template': "Fabricator(:%s) do\nend",
-      \   'keywords': 'sequence initialize_with on_init transient after_build before_validation after_validation before_save before_create after_create after_save'
-      \ },
-      \ 'spec/support/*.rb': {'command': 'support'},
-      \ 'features/*.feature': {'command': 'feature'},
-      \ 'features/step_definitions/*_steps.rb': {'command': 'steps'},
-      \ 'features/support/*.rb': {'command': 'support'}}
-
 " ------
 " ColorV
 " ------
@@ -448,3 +403,24 @@ let g:colorv_preview_ftype = 'css,html,javascript,scss,stylus,less'
 " Clojure
 "---------
 nnoremap <silent> <leader>sh :Slamhound<CR>
+
+"-------------
+" CoffeeScript
+"-------------
+nnoremap <silent> <leader>vc :CoffeeWatch vert<CR>
+
+"-------
+" Tasks
+"-------
+nnoremap <silent> <leader>tx :call Toggle_task_status()<CR>
+vnoremap <silent> tx :call Toggle_task_status()<CR>
+
+"------
+" Dash
+"------
+nmap <silent> <leader>d <Plug>DashSearch
+" Make CoffeeScript use the same docsets as JavaScript
+let g:dash_map = {
+    \ 'coffee' :  ['coffee', 'javascript', 'jquery', 'jqueryui', 'jquerym', 'angularjs', 'backbone', 'marionette', 'meteor', 'sproutcore', 'moo', 'prototype', 'bootstrap', 'foundation', 'lodash', 'underscore', 'ember', 'sencha', 'extjs', 'titanium', 'knockout', 'zepto', 'yui', 'd3', 'svg', 'dojo', 'coffee', 'nodejs', 'express', 'grunt', 'mongoose', 'moment', 'require', 'awsjs', 'jasmine', 'sinon', 'chai', 'html', 'css', 'cordova', 'phonegap', 'unity3d'],
+    \ 'less' : 'css'
+    \ }

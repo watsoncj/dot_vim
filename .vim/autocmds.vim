@@ -28,7 +28,7 @@ if has("autocmd")
     " Enable JavaScript/CoffeeScript autocomplete with libraries support
     autocmd FileType javascript,coffee setlocal omnifunc=syntaxcomplete#Complete
 
-    autocmd BufRead,BufNewFile .jshintrc set filetype=json
+    autocmd BufRead,BufNewFile .jshintrc,.bowerrc set filetype=json
 
     " Enable Rainbow Parentheses
     autocmd VimEnter * RainbowParenthesesToggle
