@@ -4,7 +4,7 @@ DOT_VIM="https://github.com/dansomething/dot_vim.git"
 CMDS="git vim"
 
 VUNDLE="https://github.com/gmarik/Vundle.vim.git"
-VUNDLE_TARGET="$HOME/.vim/bundle/vundle"
+VUNDLE_TARGET="$HOME/.vim/bundle/Vundle.vim"
 
 # Check for necessary commands
 for cmd in $CMDS; do
