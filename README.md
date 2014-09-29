@@ -4,6 +4,7 @@
 
 
 1. `bash <(curl -s https://raw.githubusercontent.com/dansomething/dot_vim/master/install)`
+    * Note: This relies on [Homeshick](https://github.com/andsens/homeshick) for installation.
 2. Enjoy enhanced productivity, increased levitation, reduced
    watermelon-related accidents, and startling sex appeal.
 
