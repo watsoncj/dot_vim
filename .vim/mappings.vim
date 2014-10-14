@@ -144,6 +144,9 @@ nnoremap <silent> <leader>vs :vsplit<Bar>:wincmd l<CR>
 " Close the current window
 nnoremap <silent> <leader>sc :close<CR>
 
+" Open a new tab
+nnoremap <silent> <leader>tn :tabnew<CR>
+
 " ---------------
 " Typo Fixes
 " ---------------
