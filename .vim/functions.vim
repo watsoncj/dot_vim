@@ -158,6 +158,19 @@ command! PasteWithPasteMode call PasteWithPasteMode()
 nnoremap <silent> <leader>p :PasteWithPasteMode<CR>
 
 " ---------------
+" Write Buffer if necessar.
+"
+" Writes the current buffer if it's needed, unless we're the in QuickFix mode.
+" ---------------
+
+function WriteBufferIfNecessary()
+  if &modified && !&readonly
+    :write
+  endif
+endfunction
+command! WriteBufferIfNecessary call WriteBufferIfNecessary()
+
+" ---------------
 " Write Buffer if able to.
 "
 " Writes the current buffer if it's not readonly, unless we're the in QuickFix mode.
