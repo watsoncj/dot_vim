@@ -158,7 +158,7 @@ command! PasteWithPasteMode call PasteWithPasteMode()
 nnoremap <silent> <leader>p :PasteWithPasteMode<CR>
 
 " ---------------
-" Write Buffer if necessar.
+" Write Buffer if necessary.
 "
 " Writes the current buffer if it's needed, unless we're the in QuickFix mode.
 " ---------------
