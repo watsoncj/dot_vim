@@ -202,7 +202,8 @@ nnoremap <silent> <leader>wo :ZoomWin<CR>
 " ---------------
 " Ensure Ctrl-P isn't bound by default
 let g:ctrlp_map = ''
-
+" Default to filename mode
+let g:ctrlp_by_filename = 1
 " Ensure max height isn't too large. (for performance)
 let g:ctrlp_max_height = 10
 let g:ctrlp_show_hidden = 1

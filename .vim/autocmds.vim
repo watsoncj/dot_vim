@@ -25,8 +25,8 @@ if has("autocmd")
     autocmd BufWritePre *.py,*.coffee,*.css,*.less,*.js,*.coffee,
           \*.rb,*.erb,*.groovy,*.java,*.php,*.ftl silent! :StripTrailingWhiteSpace
 
-    " Enable JavaScript/CoffeeScript autocomplete with libraries support
-    autocmd FileType javascript,coffee setlocal omnifunc=syntaxcomplete#Complete
+    " Enable autocomplete based on syntax
+    autocmd FileType css,coffee,javascript,html setlocal omnifunc=syntaxcomplete#Complete
 
     autocmd BufRead,BufNewFile .jshintrc,.bowerrc set filetype=json
 

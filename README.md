@@ -4,6 +4,7 @@
 
 
 1. `bash <(curl -s https://raw.githubusercontent.com/watsoncj/dot_vim/master/install)`
+    * Note: This relies on [Homeshick](https://github.com/andsens/homeshick) for installation.
 2. Enjoy enhanced productivity, increased levitation, reduced
    watermelon-related accidents, and startling sex appeal.
 
@@ -12,8 +13,8 @@
 2. `ln -s ~/.vim/vimrc ~/.vimrc`
 3. `ln -s ~/.vim/gvimrc ~/.gvimrc`
 4. Install [Vundle](https://github.com/gmarik/vundle) with `git clone
-   http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
-5. `vim +BundleInstall +qall` _installs all of the plugins_
+   http://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+5. `vim +PluginInstall +qall` _installs all of the plugins_
 
 ## Screenshots
 

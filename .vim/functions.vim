@@ -158,7 +158,7 @@ command! PasteWithPasteMode call PasteWithPasteMode()
 nnoremap <silent> <leader>p :PasteWithPasteMode<CR>
 
 " ---------------
-" Write Buffer if Necessary
+" Write Buffer if necessar.
 "
 " Writes the current buffer if it's needed, unless we're the in QuickFix mode.
 " ---------------
@@ -170,12 +170,25 @@ function WriteBufferIfNecessary()
 endfunction
 command! WriteBufferIfNecessary call WriteBufferIfNecessary()
 
+" ---------------
+" Write Buffer if able to.
+"
+" Writes the current buffer if it's not readonly, unless we're the in QuickFix mode.
+" ---------------
+
+function WriteBufferIfAble()
+  if !&readonly
+    :write
+  endif
+endfunction
+command! WriteBufferIfAble call WriteBufferIfAble()
+
 function CRWriteIfNecessary()
   if &filetype == "qf"
     " Execute a normal enter when in Quickfix list.
     execute "normal! \<enter>"
   else
-    WriteBufferIfNecessary
+    WriteBufferIfAble
   endif
 endfunction
 
