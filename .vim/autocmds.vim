@@ -26,7 +26,12 @@ if has("autocmd")
           \*.rb,*.erb,*.groovy,*.java,*.php,*.ftl silent! :StripTrailingWhiteSpace
 
     " Enable autocomplete based on syntax
-    autocmd FileType css,coffee,javascript,html setlocal omnifunc=syntaxcomplete#Complete
+    if exists("+omnifunc")
+      autocmd Filetype *
+        \ if &omnifunc == "" || &omnifunc =~ "eclim#javascript" |
+        \   setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
+    endif
 
     autocmd BufRead,BufNewFile .jshintrc,.bowerrc set filetype=json
 
