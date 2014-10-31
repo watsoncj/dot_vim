@@ -66,6 +66,7 @@ endif
 Plugin 'SirVer/ultisnips'
 Plugin 'dansomething/vim-snippets'
 "Plugin 'honza/vim-snippets'
+Plugin 'matthewsimo/angular-vim-snippets'
 Plugin 'szw/vim-tags'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'samsonw/vim-task'
