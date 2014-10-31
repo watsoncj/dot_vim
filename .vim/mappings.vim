@@ -29,10 +29,6 @@ nnoremap Y y$
 noremap H ^
 noremap L $
 
-" Create newlines without entering insert mode
-nnoremap go o<Esc>k
-nnoremap gO O<Esc>j
-
 " ---------------
 " Window Movement
 " ---------------
