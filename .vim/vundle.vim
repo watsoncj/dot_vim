@@ -22,6 +22,7 @@ Plugin 'christoomey/vim-space'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-unimpaired'
 " UI Additions
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-airline'
