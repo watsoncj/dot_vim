@@ -99,7 +99,7 @@ let g:tagbar_type_coffee = {
         \ 'f:functions:1:1',
         \ 'v:variables:1:1',
         \ 'o:object',
-        \ 'a:array',
+        \ 'a:array:1:0',
         \ 's:string:1:0'
     \ ]
 \ }
