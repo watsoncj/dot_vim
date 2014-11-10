@@ -92,11 +92,15 @@ let g:tagbar_width = 60
 let g:tagbar_type_coffee = {
     \ 'ctagstype' : 'coffee',
     \ 'kinds'     : [
+        \ 'n:ng-component',
+        \ 't:ng-scope-variable',
         \ 'c:classes',
         \ 'm:methods',
-        \ 'f:functions',
-        \ 'v:variables',
-        \ 'f:fields',
+        \ 'f:functions:1:1',
+        \ 'v:variables:1:1',
+        \ 'o:object',
+        \ 'a:array',
+        \ 's:string:1:0'
     \ ]
 \ }
 
