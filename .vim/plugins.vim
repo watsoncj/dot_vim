@@ -97,7 +97,7 @@ let g:tagbar_type_coffee = {
         \ 'c:classes',
         \ 'm:methods',
         \ 'f:functions:1:1',
-        \ 'v:variables:1:1',
+        \ 'v:variables:1:0',
         \ 'o:object',
         \ 'a:array:1:0',
         \ 's:string:1:0'
