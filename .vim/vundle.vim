@@ -35,6 +35,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'mbbill/undotree'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'edkolev/tmuxline.vim'
 " Commands
 Plugin 'dansomething/vim-eclim'
 Plugin 'scrooloose/nerdcommenter'

@@ -435,3 +435,14 @@ let g:dash_map = {
     \ 'coffee' :  ['coffee', 'javascript', 'jquery', 'jqueryui', 'jquerym', 'angularjs', 'backbone', 'marionette', 'meteor', 'sproutcore', 'moo', 'prototype', 'bootstrap', 'foundation', 'lodash', 'underscore', 'ember', 'sencha', 'extjs', 'titanium', 'knockout', 'zepto', 'yui', 'd3', 'svg', 'dojo', 'coffee', 'nodejs', 'express', 'grunt', 'mongoose', 'moment', 'require', 'awsjs', 'jasmine', 'sinon', 'chai', 'html', 'css', 'cordova', 'phonegap', 'unity3d'],
     \ 'less' : 'css'
     \ }
+
+let g:tmuxline_preset = {
+    \ 'a'    : '❐ #S',
+    \ 'b'    : '#H',
+    \ 'c'    : '#(basename `pwd`)',
+    \ 'win'  : '#I  #W',
+    \ 'cwin' : '#I  #W',
+    \ 'x'    : '%I:%M %p',
+    \ 'y'    : '⚡️ #(battery)',
+    \ 'z'    : '#(uptime | rev | cut -d":" -f1 | rev | sed s/,//g)'
+    \ }
