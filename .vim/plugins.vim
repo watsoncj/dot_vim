@@ -439,10 +439,10 @@ let g:dash_map = {
 let g:tmuxline_preset = {
     \ 'a'    : '❐ #S',
     \ 'b'    : '#H',
-    \ 'c'    : '#(basename `pwd`)',
-    \ 'win'  : '#I  #W',
-    \ 'cwin' : '#I  #W',
-    \ 'x'    : '%I:%M %p',
+    \ 'c'    : '#(whoami)',
+    \ 'win'  : ['#I', '#W'],
+    \ 'cwin' : ['#I', '#W'],
+    \ 'x'    : ['%I:%M %p', '%D'],
     \ 'y'    : '⚡️ #(battery)',
     \ 'z'    : '#(uptime | rev | cut -d":" -f1 | rev | sed s/,//g)'
     \ }
