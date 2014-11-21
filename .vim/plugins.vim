@@ -92,11 +92,15 @@ let g:tagbar_width = 60
 let g:tagbar_type_coffee = {
     \ 'ctagstype' : 'coffee',
     \ 'kinds'     : [
+        \ 'n:ng-component',
+        \ 't:ng-scope-variable',
         \ 'c:classes',
         \ 'm:methods',
-        \ 'f:functions',
-        \ 'v:variables',
-        \ 'f:fields',
+        \ 'f:functions:1:1',
+        \ 'v:variables:1:0',
+        \ 'o:object',
+        \ 'a:array:1:0',
+        \ 's:string:1:0'
     \ ]
 \ }
 
@@ -249,6 +253,12 @@ endif
 let g:airline_theme = 'jellybeans'
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#eclim#enabled = 0
 let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#whitespace#enabled = 1
@@ -356,6 +366,9 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_semantic_triggers =  {
+  \   'css,less' : ['re!:\s+'],
+  \ }
 
 " ---------------
 " Ultisnips
@@ -366,13 +379,10 @@ let g:UltiSnipsListSnippets="<leader><tab>"
 " ---------------
 " vim-signify
 " ---------------
-let g:signify_mapping_next_hunk = '<leader>gj'
-let g:signify_mapping_prev_hunk = '<leader>gk'
-let g:signify_mapping_toggle_highlight="<nop>"
-let g:signify_mapping_toggle="<nop>"
+nmap <leader>gj <plug>(signify-next-hunk)
+nmap <leader>gk <plug>(signify-prev-hunk)
 " Makes switching buffers in large repos have no delay
 let g:signify_update_on_bufenter = 0
-let g:signify_sign_overwrite = 0
 
 " ---------------
 " vim-startify
@@ -438,4 +448,15 @@ nmap <silent> <leader>d <Plug>DashSearch
 let g:dash_map = {
     \ 'coffee' :  ['coffee', 'javascript', 'jquery', 'jqueryui', 'jquerym', 'angularjs', 'backbone', 'marionette', 'meteor', 'sproutcore', 'moo', 'prototype', 'bootstrap', 'foundation', 'lodash', 'underscore', 'ember', 'sencha', 'extjs', 'titanium', 'knockout', 'zepto', 'yui', 'd3', 'svg', 'dojo', 'coffee', 'nodejs', 'express', 'grunt', 'mongoose', 'moment', 'require', 'awsjs', 'jasmine', 'sinon', 'chai', 'html', 'css', 'cordova', 'phonegap', 'unity3d'],
     \ 'less' : 'css'
+    \ }
+
+let g:tmuxline_preset = {
+    \ 'a'    : '❐ #S',
+    \ 'b'    : '#H',
+    \ 'c'    : '#(whoami)',
+    \ 'win'  : ['#I', '#W'],
+    \ 'cwin' : ['#I', '#W'],
+    \ 'x'    : ['%I:%M %p', '%D'],
+    \ 'y'    : '⚡️ #(battery)',
+    \ 'z'    : '#(tmux-mem-cpu-load)'
     \ }
