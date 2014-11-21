@@ -365,8 +365,8 @@ let g:UltiSnipsListSnippets="<leader><tab>"
 " ---------------
 " vim-signify
 " ---------------
-nnoremap <leader>gj <plug>(signify-next-hunk)
-nnoremap <leader>gk <plug>(signify-prev-hunk)
+nmap <leader>gj <plug>(signify-next-hunk)
+nmap <leader>gk <plug>(signify-prev-hunk)
 " Makes switching buffers in large repos have no delay
 let g:signify_update_on_bufenter = 0
 
