@@ -444,5 +444,5 @@ let g:tmuxline_preset = {
     \ 'cwin' : ['#I', '#W'],
     \ 'x'    : ['%I:%M %p', '%D'],
     \ 'y'    : '⚡️ #(battery)',
-    \ 'z'    : '#(uptime | rev | cut -d":" -f1 | rev | sed s/,//g)'
+    \ 'z'    : '#(tmux-mem-cpu-load)'
     \ }
