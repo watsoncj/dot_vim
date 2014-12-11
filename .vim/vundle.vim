@@ -56,6 +56,7 @@ Plugin 'dansomething/vim-visual-star-search'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-dispatch'
 " Automatic Helpers
+Plugin 'tpope/vim-obsession'
 Plugin 'vim-scripts/SyntaxComplete'
 Plugin 'MarcWeber/vim-addon-local-vimrc'
 Plugin 'Raimondi/delimitMate'
@@ -98,7 +99,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-cucumber'
 Plugin 'dansomething/ftl-vim-syntax'
 Plugin 'tfnico/vim-gradle'
-Plugin 'andersoncustodio/vim-tmux'
+Plugin 'tmux-plugins/vim-tmux'
 " MatchIt
 Plugin 'matchit.zip'
 " Libraries
