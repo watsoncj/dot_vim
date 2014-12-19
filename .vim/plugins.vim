@@ -304,6 +304,10 @@ xmap ia <Plug>SidewaysArgumentTextobjI
 nnoremap - :Switch<cr>
 autocmd FileType coffee let g:switch_custom_definitions =
     \ [
+    \   [' ->', ' =>', ' (done) ->', ' (done) =>'],
+    \ ]
+autocmd BufNewFile,BufRead *[Ss]pec.coffee let g:switch_custom_definitions =
+    \ [
     \   {
     \     '^\(\s\+\)\?describe \(''[^'']\+''\)':  '\1xdescribe \2',
     \     '^\(\s\+\)\?xdescribe \(''[^'']\+''\)':  '\1describe.only \2',
