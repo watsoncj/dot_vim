@@ -22,7 +22,7 @@
 
 [![MacVim][ss]][ss]
 
-[ss]: https://github.com/mutewinter/dot_vim/raw/master/screenshots/MacVim.png
+[ss]: https://raw.githubusercontent.com/mutewinter/dot_vim/master/screenshots/iTerm.png
 
 ## Requirements
 
