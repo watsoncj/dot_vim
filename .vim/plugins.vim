@@ -308,6 +308,12 @@ xmap aa <Plug>SidewaysArgumentTextobjA
 omap ia <Plug>SidewaysArgumentTextobjI
 xmap ia <Plug>SidewaysArgumentTextobjI
 
+" -------------
+" splitjoin.vim
+" -------------
+let g:splitjoin_split_mapping = 'sk'
+let g:splitjoin_join_mapping  = 'sj'
+
 " ---------------
 " switch.vim
 " ---------------
