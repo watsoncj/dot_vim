@@ -311,7 +311,7 @@ xmap ia <Plug>SidewaysArgumentTextobjI
 " ---------------
 " switch.vim
 " ---------------
-nnoremap - :Switch<cr>
+let g:switch_mapping = "-"
 autocmd FileType coffee let g:switch_custom_definitions =
     \ [
     \   [' ->', ' =>', ' (done) ->', ' (done) =>'],
