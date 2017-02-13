@@ -23,6 +23,7 @@ if has('persistent_undo')
   set undofile
   set undodir=~/.vim/.undo
 endif
+set exrc " project specific .vimrc
 
 " ---------------
 " UI
@@ -89,7 +90,7 @@ set ignorecase " Case insensitive search
 set smartcase  " Non-case sensitive search
 set incsearch  " Incremental search
 set hlsearch   " Highlight search results
-set wildignore+=*/.tmp/*,*/test-output/*,*/bin/*,*/target/*,*/build/*,
+set wildignore+=*/.tmp/*,*/test-output/*,*/bin/*,*/target/*,*/build/*,./build/*,
       \*/node_modules/*,*.o,*.obj,*.exe,*.so,*.dll,*.pyc,.svn,.hg,.bzr,.git,
       \.sass-cache,*.class,*.scssc,*.cssc,sprockets%*,*.lessc
 
