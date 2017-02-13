@@ -66,14 +66,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_full_redraws = 1
-
-" Platform-specific config files
-if has('win32') || has('win64')
-  let g:syntastic_jsl_conf=$HOME.'/.vim/config/windows/syntastic/jsl.conf'
-  let g:syntastic_disabled_filetypes=['sh'] " Disable .sh on Windows
-else
-  let g:syntastic_javascript_jsl_conf=$HOME.'/.vim/config/unix/syntastic/jsl.conf'
-endif
+let g:syntastic_javascript_checkers = ['jscs']
 
 " ---------------
 " Tags
@@ -215,6 +208,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_reuse_window = 'startify'
 let g:ctrlp_mruf_max = 350
 let g:ctrlp_mruf_default_order = 0
+
 autocmd FileType coffee let g:switch_custom_definitions =
     \ [
     \   {
